@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "loose": true,
+        "exclude": [
+          "web.dom.iterable"
+        ]
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "UIStream.createElement",
+        "pragmaFrag": "UIStream.Fragment",
+        "throwIfNamespace": true
+      }
+    ]
+  ]
+}
