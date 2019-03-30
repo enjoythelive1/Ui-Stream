@@ -20,14 +20,21 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'ui-stream.js',
-        library: 'UIStream'
+        library: 'UIStream',
+        libraryTarget: 'umd',
     },
     externals: {
-        rxjs: {
+        'rxjs': {
             commonjs: 'rxjs',
             commonjs2: 'rxjs',
             amd: 'rxjs',
             root: 'rxjs'
-        }
+        },
+        'rxjs/operators': {
+            commonjs: 'rxjs/operators',
+            commonjs2: 'rxjs/operators',
+            amd: 'rxjs/operators',
+            root: ['rxjs', 'operators']
+        },
     }
 };
