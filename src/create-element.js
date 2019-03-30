@@ -1,11 +1,13 @@
 import {map} from 'rxjs/operators';
-import {getDescription$} from "./get-params";
-import {flatArray} from "./flat-array";
+import {getDescription$} from './get-description';
+import 'core-js/stable/object/assign';
+import 'core-js/stable/array/includes';
+import 'core-js/stable/array/flat';
 
 export default function createElement(tag, attributes={}, ...children) {
-    if (['string', 'function'].indexOf(typeof tag) === -1) throw new Error('Tag must be a function or string');
+    if (!['string', 'function'].includes(typeof tag)) throw new Error('Tag must be a function or string');
 
-    const flatChildren = flatArray(children);
+    const flatChildren = children.flat();
 
     if (typeof tag === 'function') {
         return tag(attributes, flatChildren);

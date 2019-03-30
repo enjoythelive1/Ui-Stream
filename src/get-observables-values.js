@@ -1,7 +1,7 @@
-import {combineLatest, of} from 'rxjs';
+import {combineLatest, of, isObservable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {isObservable} from "rxjs/internal-compatibility";
-import {fromEntries} from "./utils/from-entries";
+import 'core-js/stable/object/entries';
+import 'core-js/modules/es.object.from-entries'
 
 export default function getObservablesValues$(attributes) {
     const entries = Object.entries(attributes)
@@ -20,6 +20,6 @@ export default function getObservablesValues$(attributes) {
             ))
     )
         .pipe(
-            map(entries => fromEntries(entries)),
+            map(entries => Object.fromEntries(entries)),
         );
 }

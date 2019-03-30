@@ -3,6 +3,7 @@ import {map} from 'rxjs/operators';
 import getScalarValues$ from "./get-scalar-values";
 import getSubjectsTriggers$ from "./get-subjects-triggers";
 import getObservablesValues$ from "./get-observables-values";
+import 'core-js/stable/object/assign';
 
 export default function getAttributeValues$(attributes) {
     return combineLatest([

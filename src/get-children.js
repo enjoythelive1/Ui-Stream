@@ -1,5 +1,5 @@
 import {isObservable, of, combineLatest} from "rxjs";
-import {switchMap, tap} from 'rxjs/operators';
+import {switchMap} from 'rxjs/operators';
 
 export default function getChildren$(children) {
     if (children === null || children.length === 0) return of(null);
