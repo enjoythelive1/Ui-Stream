@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["warn", "4"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "comma-dangle": ["warn", "always"],
+    "max-len": ["warn", 120]
+  },
+  "env": {
+    "es6": true,
+    "shared-node-browser": true
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js(x)"],
+      "env": {
+        "jasmine": true
+      }
+    }
+  ]
+}
